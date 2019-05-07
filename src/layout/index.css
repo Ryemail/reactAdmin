@@ -1,59 +1,58 @@
+/* 布局修改 */
 .customize-layout {
-    height: 100%;
+  height: 100%;
 }
-
 .customize-layout .trigger {
-    font-size: 18px;
-    line-height: 64px;
-    padding: 0 24px;
-    cursor: pointer;
-    transition: color .3s;
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color .3s;
 }
-
 .customize-layout .trigger:hover {
-    color: #1890ff;
+  color: #1890ff;
 }
-
 .customize-layout .logo {
-    height: 32px;
-    background: rgba(255, 255, 255, .2);
-    margin: 16px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px;
 }
-
+/* header  右侧 */
 .header-right {
-    float: right;
-    overflow: hidden;
+  float: right;
+  overflow: hidden;
 }
-.header-right .trigger{
-    font-size: 16px;
+.header-right .trigger {
+  font-size: 16px;
 }
-.header-right .trigger:hover{
-    color: #1890ff;
+.header-right .trigger:hover {
+  color: #1890ff;
 }
-.header-right .trigger:hover span{
-    transform: scale(1.05);
+.header-right .trigger:hover span {
+  transform: scale(1.05);
 }
-
-.customize-layout-content{
-    overflow: hidden;
-    margin:16px;
-    background: #fff;
-    height:100%
+/* content */
+.customize-layout-content {
+  overflow: hidden;
+  margin: 16px;
+  background: #fff;
+  height: 100%;
 }
-.customize-layout-content-children{
-    overflow:auto;
-    margin:0;
-    width:101.5%;
-    padding: 18px;
+.customize-layout-content-children {
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 0;
+  width: 101.5%;
+  padding: 18px;
 }
 /* 导航样式 */
-.customize-aside{
-    width: 256px;
-    height: 100%;
-    background: #001529;
-    overflow:hidden;
+.customize-aside {
+  width: 276px;
+  height: 100%;
+  background: #001529;
+  overflow: hidden;
 }
-.customize-aside-children{
-    overflow-y:auto;
-    height: 100%;
+.customize-aside-children {
+  height: 100%;
+  overflow-x: hidden;
 }

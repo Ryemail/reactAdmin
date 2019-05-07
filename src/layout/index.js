@@ -5,7 +5,8 @@ import MenuConfig from '../mock/menuConfig';
 import Login from '../pages/login/';
 import Home from '../pages/home/';
 import Button from '../pages/button/';
-import "./index.css";
+import Echarts from '../pages/echarts/';
+import "./index.less";
 
 const { Header, Sider, Content } = Layout;
 const { SubMenu } = Menu;
@@ -47,21 +48,36 @@ class App extends Component {
                     <Route path="/login" component={Login} />
                     <Route path="/" render={() =>
                         <Layout className="customize-layout">
-                            <Sider
-                                width={256}
+                            <Sider breakpoint="lg"
                                 trigger={null}
                                 collapsible
                                 collapsed={this.state.collapsed}
+                                onCollapse={() => {
+                                    this.toggle();
+                                }}
+                                width={256}
+                                className="customize-aside"
                             >
-                                <div className="logo" />
-                                <Menu
-                                    theme="dark"
-                                    mode="inline"
-                                    defaultSelectedKeys={['/home']}
-                                    className="customize-aside-children"
+                                <Sider className="customize-aside-children"
+                                    trigger={null}
+                                    width={276}
                                 >
-                                    {this.state.menuTreeNode}
-                                </Menu>
+                                    <Sider
+                                        trigger={null}
+                                        collapsible
+                                        collapsed={this.state.collapsed}
+                                        width={256}
+                                    >
+                                        <div className="logo" />
+                                        <Menu
+                                            theme="dark"
+                                            mode="inline"
+                                            defaultSelectedKeys={['/home']}
+                                        >
+                                            {this.state.menuTreeNode}
+                                        </Menu>
+                                    </Sider>
+                                </Sider>
                             </Sider>
                             <Layout>
                                 {this.renderHeader()}
@@ -79,14 +95,19 @@ class App extends Component {
         return data.map(item => {
             if (item.children) {
                 return (
-                    <SubMenu title={item.title} key={item.key}>
+                    <SubMenu title={<span><Icon type="user" /><span>{item.title}</span></span>} key={item.key}>
                         {this.renderMenu(item.children)}
                     </SubMenu>
                 );
             }
             return (
                 <Menu.Item title={item.title} key={item.key}>
-                    <NavLink to={item.key}>{item.title}</NavLink>
+                    <NavLink to={item.key}>
+                        <span>
+                            <Icon type="file" />
+                            <span> {item.title}</span>
+                        </span>
+                    </NavLink>
                 </Menu.Item>
             );
         });
@@ -124,6 +145,7 @@ class App extends Component {
                             <Route path="/home" exact component={Home} />
                             <Route path="/login" component={Login} />
                             <Route path="/ui/buttons" component={Button} />
+                            <Route path="/ui/echarts" component={ Echarts} />
                         </Switch>
                     </Content>
                 </Content>

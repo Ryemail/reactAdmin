@@ -1,7 +1,8 @@
 const menuList = [
     {
         title: '首页',
-        key: '/home'
+        key: '/home',
+        icon:'frown'
     },
     {
         title: 'UI',
@@ -12,8 +13,8 @@ const menuList = [
                 key: '/ui/buttons',
             },
             {
-                title: '弹框',
-                key: '/ui/modals',
+                title: 'echarts',
+                key: '/ui/echarts',
             },
             {
                 title: 'Loading',
